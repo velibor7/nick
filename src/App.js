@@ -4,7 +4,7 @@ import logo from "./logo.svg";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from "./home/pages/Home";
-import ImageDetail from "./home/components/ImageDetail";
+import ImageDetail from "./home/components/ImageItem";
 
 // import "./App.css";
 

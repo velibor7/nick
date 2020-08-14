@@ -5,7 +5,7 @@
   /* background-color: black; */
 }
 
-.hexGrid {
+.image-list__grid {
   display: flex;
   flex-wrap: wrap;
   width: 90%;
@@ -29,7 +29,7 @@
   display: block;
   padding-bottom: 86.602%; /* =  100 / tan(60) * 1.5 */
 }
-.hexIn {
+.image-item__inner-div {
   position: absolute;
   width: 96%;
   padding-bottom: 110.851%; /* =  width / sin(60) */
@@ -42,12 +42,12 @@
   transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
   transition: all 0.5s;
 }
-.hexIn * {
+.image-item__inner-div * {
   position: absolute;
   visibility: visible;
   outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
 }
-.hexLink {
+.image-item__link {
   display: block;
   width: 100%;
   height: 100%;
@@ -106,7 +106,7 @@
   text-transform: uppercase;
 }
 
-.img {
+.image-item__img {
   position: absolute;
   top: 0;
   right: 0;
@@ -126,8 +126,8 @@
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
-.img:before,
-.img:after {
+.image-item__img:before,
+.image-item__img:after {
   position: absolute;
   top: 0;
   right: 0;
@@ -137,10 +137,10 @@
   opacity: 0;
   transition: opacity 0.5s;
 }
-.img:before {
+.image-item__img:before {
   background: rgba(22, 103, 137, 0.3);
 }
-.img:after {
+.image-item__img:after {
   background: linear-gradient(
     to top,
     transparent,
@@ -151,24 +151,24 @@
 
 /*** HOVER EFFECT  **********************************************************************/
 
-.hexLink:hover h1,
-.hexLink:focus h1,
-.hexLink:hover p,
-.hexLink:focus p {
+.image-item__link:hover h1,
+.image-item__link:focus h1,
+.image-item__link:hover p,
+.image-item__link:focus p {
   opacity: 1;
   transition: 0.8s;
 }
 
-.hexIn:hover .img:before,
-.hexIn:hover .img:after,
-.hexIn:hover .hexLink {
+.image-item__inner-div:hover .image-item__img:before,
+.image-item__inner-div:hover .image-item__img:after,
+.image-item__inner-div:hover .image-item__link {
   opacity: 1;
 }
 
 /*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
 @media (min-width: 1201px) {
   /* <- 5-4  hexagons per row */
-  .hexGrid {
+  .image-list__grid {
     padding-bottom: 4.4%;
   }
   .image-item__li-container {
@@ -182,7 +182,7 @@
 
 @media (max-width: 1200px) and (min-width: 901px) {
   /* <- 4-3  hexagons per row */
-  .hexGrid {
+  .image-list__grid {
     padding-bottom: 5.5%;
     font-size: 13px;
   }
@@ -197,7 +197,7 @@
 
 @media (max-width: 900px) and (min-width: 601px) {
   /* <- 3-2  hexagons per row */
-  .hexGrid {
+  .image-list__grid {
     padding-bottom: 7.4%;
     font-size: 14px;
   }
@@ -212,7 +212,7 @@
 
 @media (max-width: 600px) {
   /* <- 2-1  hexagons per row */
-  .hexGrid {
+  .image-list__grid {
     padding-bottom: 11.2%;
     font-size: 12px;
   }
@@ -226,7 +226,7 @@
 }
 
 @media (max-width: 400px) {
-  .hexGrid {
+  .image-list__grid {
     font-size: 8px;
   }
 }
