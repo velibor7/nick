@@ -9,10 +9,7 @@ const ImageDetail = (props) => {
           <div
             className="image-item__img"
             style={{
-              backgroundImage:
-                "url(" +
-                "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" +
-                ")",
+              backgroundImage: `url(${props.img})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
@@ -27,3 +24,11 @@ const ImageDetail = (props) => {
 };
 
 export default ImageDetail;
+
+{
+  /**
+backgroundImage:
+                "url(" +
+                "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" +
+                ")", */
+}

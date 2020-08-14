@@ -12,6 +12,7 @@ const ImageList = (props) => {
             key={image.title}
             title={image.title}
             description={image.description}
+            img={image.img}
           />
         ))}
       </ul>
