@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import "./ImageItem.css";
-const ImageDetail = (props) => {
+const ImageItem = (props) => {
   return (
     <li className="image-item__li-container">
       <div className="image-item__inner-div">
@@ -23,12 +23,4 @@ const ImageDetail = (props) => {
   );
 };
 
-export default ImageDetail;
-
-{
-  /**
-backgroundImage:
-                "url(" +
-                "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" +
-                ")", */
-}
+export default ImageItem;
