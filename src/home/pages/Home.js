@@ -1,14 +1,12 @@
 import React, { Fragment, useEffect, useState } from "react";
 import MainNavigation from "../../shared/components/Navigation/MainNavigation";
 import ImageList from "../components/ImageList";
-import { useHttpClient } from "../../shared/hooks/http-hook";
 
 import axios from "../../axios";
 
 import "./Home.css";
 const Home = () => {
   const [images, setImages] = useState([]);
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
   useEffect(() => {
     const fetchImages = async () => {

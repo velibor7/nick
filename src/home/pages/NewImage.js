@@ -34,25 +34,21 @@ const NewImage = () => {
 
   const imageSubmitHandler = async (event) => {
     event.preventDefault();
-    console.log("tryin");
-    // console.log(auth.token);
 
     try {
-      const formData = new FormData();
-      formData.append("title", formState.inputs.title.value);
-      formData.append("description", formState.inputs.description.value);
-      formData.append("img", formState.inputs.img.value);
+      const id = formState.inputs.img.value.split("/")[5];
+      const directImageURL = `https://drive.google.com/uc?export=view&id=${id}`;
 
-      console.log(formState.inputs.title.img);
-      // console.log(formState.inputs.image.value);
       const data = {
         title: formState.inputs.title.value,
         description: formState.inputs.description.value,
-        img: formState.inputs.img.value,
+        img: directImageURL,
       };
+
       axios
         .post("/images.json", data)
-        .then((res) => history.push("/"))
+        .then((res) => console.log(res))
+        //.then((res) => history.push("/"))
         .catch((err) => console.log(err));
     } catch (err) {}
   };

@@ -8,7 +8,12 @@ import "./Modal.css";
 const ModalOverlay = (props) => {
   const content = (
     <div className={`modal ${props.className}`} style={props.style}>
-      <img src={props.img} alt="Can't load image" className="img" />
+      <img
+        src={props.img}
+        alt="Can't load image"
+        className="img"
+        width="100%"
+      />
     </div>
   );
   return ReactDOM.createPortal(content, document.getElementById("modal-hook"));
