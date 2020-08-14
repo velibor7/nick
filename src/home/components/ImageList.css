@@ -42,6 +42,7 @@
   transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
   transition: all 0.5s;
 }
+
 .image-item__inner-div * {
   position: absolute;
   visibility: visible;
@@ -216,7 +217,7 @@
     padding-bottom: 11.2%;
     font-size: 12px;
   }
-  .image-item__li-containerx {
+  .image-item__li-container {
     width: 50%; /* = 100 / 3 */
   }
   .image-item__li-container:nth-child(3n + 3) {
