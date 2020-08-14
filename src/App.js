@@ -1,10 +1,10 @@
 import React from "react";
-import logo from "./logo.svg";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from "./home/pages/Home";
 import ImageDetail from "./home/components/ImageItem";
+import NewImage from "./home/pages/NewImage";
 
 // import "./App.css";
 
@@ -12,11 +12,11 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/">
+        <Route path="/" exact>
           <Home />
         </Route>
-        <Route path="image/:imageId">
-          <ImageDetail />
+        <Route path="/new" exact>
+          <NewImage />
         </Route>
       </Switch>
     </Router>
