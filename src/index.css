@@ -8,7 +8,7 @@ html {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("./shared/images/bg.jpg");
+  background: url("./shared/images/bg2.jpeg") no-repeat center center fixed;
   background-size: cover;
 }
 
