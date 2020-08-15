@@ -9,11 +9,10 @@ import Button from "../../shared/components/FormElements/Button";
 import { AuthContext } from "../../shared/context/auth-context";
 import { useForm } from "../../shared/hooks/form-hook";
 
-import axios from "../../axios";
-
 import { useFirebaseApp } from "reactfire";
 import "firebase/auth";
 import "./Auth.css";
+import { useHistory } from "react-router-dom";
 
 const Auth = () => {
   const auth = useContext(AuthContext);
@@ -33,26 +32,9 @@ const Auth = () => {
   );
 
   const firebase = useFirebaseApp();
-
+  const history = useHistory();
   const loginHandler = async (event) => {
     event.preventDefault();
-    /*
-    try {
-      axios
-        .post(
-          "/users.json",
-          JSON.stringify({
-            email: formState.inputs.email.value,
-            password: formState.inputs.password.value,
-          })
-        )
-        .then((res) => {
-          auth.login(res.userId, res.token);
-        })
-        .catch((err) => console.log(err));
-
-      auth.login();
-    } catch (err) {}*/
 
     firebase
       .auth()
@@ -62,6 +44,7 @@ const Auth = () => {
       )
       .then((res) => {
         console.log(res);
+        history.push("/");
       })
       .catch((err) => {
         console.log(err);

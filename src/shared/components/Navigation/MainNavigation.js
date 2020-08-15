@@ -1,6 +1,6 @@
 import React from "react";
 import { useFirebaseApp, useUser } from "reactfire";
-
+import Button from "../FormElements/Button";
 import "firebase/auth";
 import "./MainNavigation.css";
 
@@ -34,9 +34,9 @@ const MainNavigation = () => {
       </div>
       <hr width="30%" />
       {user ? (
-        <button type="button" onClick={logoutHandler}>
+        <Button type="button" onClick={logoutHandler}>
           LOGOUT
-        </button>
+        </Button>
       ) : null}
     </div>
   );
