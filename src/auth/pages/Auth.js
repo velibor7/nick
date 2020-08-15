@@ -11,6 +11,8 @@ import { useForm } from "../../shared/hooks/form-hook";
 
 import axios from "../../axios";
 
+import { useFirebaseApp } from "reactfire";
+import "firebase/auth";
 import "./Auth.css";
 
 const Auth = () => {
@@ -30,9 +32,11 @@ const Auth = () => {
     true
   );
 
+  const firebase = useFirebaseApp();
+
   const loginHandler = async (event) => {
     event.preventDefault();
-    // console.log(event);
+    /*
     try {
       axios
         .post(
@@ -48,7 +52,20 @@ const Auth = () => {
         .catch((err) => console.log(err));
 
       auth.login();
-    } catch (err) {}
+    } catch (err) {}*/
+
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(
+        formState.inputs.email.value,
+        formState.inputs.password.value
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (

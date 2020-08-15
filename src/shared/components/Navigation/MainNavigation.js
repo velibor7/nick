@@ -1,8 +1,17 @@
 import React from "react";
+import { useFirebaseApp, useUser } from "reactfire";
 
+import "firebase/auth";
 import "./MainNavigation.css";
 
 const MainNavigation = () => {
+  const firebase = useFirebaseApp();
+  const user = useUser();
+
+  const logoutHandler = () => {
+    firebase.auth().signOut();
+  };
+
   return (
     <div className="main-navigation">
       <hr width="30%" />
@@ -24,6 +33,11 @@ const MainNavigation = () => {
         </svg>
       </div>
       <hr width="30%" />
+      {user ? (
+        <button type="button" onClick={logoutHandler}>
+          LOGOUT
+        </button>
+      ) : null}
     </div>
   );
 };

@@ -6,9 +6,13 @@ import Home from "./home/pages/Home";
 import Auth from "./auth/pages/Auth";
 import NewImage from "./home/pages/NewImage";
 
+import { useFirebaseApp } from "reactfire";
+
 // import "./App.css";
 
 function App() {
+  const firebase = useFirebaseApp();
+  console.log(firebase);
   return (
     <Router>
       <Switch>
