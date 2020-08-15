@@ -1,8 +1,10 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { useFirebaseApp, useUser } from "reactfire";
-import Button from "../FormElements/Button";
 import "firebase/auth";
+
+import Button from "../FormElements/Button";
+
 import "./MainNavigation.css";
 
 const MainNavigation = () => {

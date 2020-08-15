@@ -1,12 +1,9 @@
-import React, { useState, useContext, Fragment } from "react";
+import React, { Fragment } from "react";
 
 import Card from "../../shared/components/UIElements/Card";
-import Spinner from "../../shared/components/UIElements/Spinner";
-import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
 
-import { AuthContext } from "../../shared/context/auth-context";
 import { useForm } from "../../shared/hooks/form-hook";
 
 import { useFirebaseApp } from "reactfire";
@@ -15,8 +12,6 @@ import "./Auth.css";
 import { useHistory } from "react-router-dom";
 
 const Auth = () => {
-  const auth = useContext(AuthContext);
-
   const [formState, inputHandler, setFormData] = useForm(
     {
       email: {
@@ -53,7 +48,7 @@ const Auth = () => {
 
   return (
     <Fragment>
-      <Card>
+      <Card className="auth__container">
         <form onSubmit={loginHandler}>
           <Input
             element="input"

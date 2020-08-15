@@ -21,7 +21,6 @@
 .button:active {
   background: #8e8e8e;
   transition: 0.4s;
-  /*border-color: #ff4382; */
 }
 
 .button--inverse {

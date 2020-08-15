@@ -1,7 +1,6 @@
 import React from "react";
 
 import ImageItem from "./ImageItem";
-import Spinner from "../../shared/components/UIElements/Spinner";
 
 import "./ImageList.css";
 

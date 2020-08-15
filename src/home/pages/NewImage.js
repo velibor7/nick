@@ -4,14 +4,11 @@ import { useForm } from "../../shared/hooks/form-hook";
 
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
-
-import ImageUpload from "../../shared/components/FormElements/ImageUpload";
-import ErrorModal from "../../shared/components/UIElements/ErrorModal";
-import Spinner from "../../shared/components/UIElements/Spinner";
 import Card from "../../shared/components/UIElements/Card";
 import axios from "../../axios";
 
 import "./NewImage.css";
+
 const NewImage = () => {
   const [formState, inputHandler] = useForm(
     {
@@ -49,14 +46,14 @@ const NewImage = () => {
       axios
         .post("/images.json", data)
         .then((res) => console.log(res))
-        //.then((res) => history.push("/"))
+        //! .then((res) => history.push("/"))
         .catch((err) => console.log(err));
     } catch (err) {}
   };
 
   return (
     <Fragment>
-      <Card className="cocktail-card" className="new-image__container">
+      <Card className="new-image__container">
         <form className="cocktail-form" onSubmit={imageSubmitHandler}>
           <Input
             id="title"
