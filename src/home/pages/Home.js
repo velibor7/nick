@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <Fragment>
       <MainNavigation></MainNavigation>
-      <ImageList images={images}></ImageList>
+      {/*<ImageList images={images}></ImageList> */}
       {/*<footer className="footer">Made by wony</footer> */}
     </Fragment>
   );

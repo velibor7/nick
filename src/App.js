@@ -3,7 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from "./home/pages/Home";
-import ImageDetail from "./home/components/ImageItem";
+import Auth from "./auth/pages/Auth";
 import NewImage from "./home/pages/NewImage";
 
 // import "./App.css";
@@ -17,6 +17,9 @@ function App() {
         </Route>
         <Route path="/new" exact>
           <NewImage />
+        </Route>
+        <Route path="/auth" exact>
+          <Auth />
         </Route>
       </Switch>
     </Router>
