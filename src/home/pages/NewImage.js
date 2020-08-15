@@ -11,6 +11,7 @@ import Spinner from "../../shared/components/UIElements/Spinner";
 import Card from "../../shared/components/UIElements/Card";
 import axios from "../../axios";
 
+import "./NewImage.css";
 const NewImage = () => {
   const [formState, inputHandler] = useForm(
     {
@@ -36,13 +37,13 @@ const NewImage = () => {
     event.preventDefault();
 
     try {
-      const id = formState.inputs.img.value.split("/")[5];
-      const directImageURL = `https://drive.google.com/uc?export=view&id=${id}`;
+      //const id = formState.inputs.img.value.split("/")[5];
+      //const directImageURL = `https://drive.google.com/uc?export=view&id=${id}`;
 
       const data = {
         title: formState.inputs.title.value,
         description: formState.inputs.description.value,
-        img: directImageURL,
+        img: formState.inputs.img.value,
       };
 
       axios
@@ -55,7 +56,7 @@ const NewImage = () => {
 
   return (
     <Fragment>
-      <Card className="cocktail-card">
+      <Card className="cocktail-card" className="new-image__container">
         <form className="cocktail-form" onSubmit={imageSubmitHandler}>
           <Input
             id="title"

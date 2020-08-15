@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 import { useFirebaseApp, useUser } from "reactfire";
 import Button from "../FormElements/Button";
 import "firebase/auth";
@@ -15,7 +16,7 @@ const MainNavigation = () => {
   return (
     <div className="main-navigation">
       <hr width="30%" />
-      <div>
+      <Link to="/">
         <svg
           className="logo-svg"
           width="90"
@@ -31,12 +32,17 @@ const MainNavigation = () => {
             fill="white"
           />
         </svg>
-      </div>
+      </Link>
       <hr width="30%" />
       {user ? (
-        <Button type="button" onClick={logoutHandler}>
-          LOGOUT
-        </Button>
+        <Fragment>
+          <Button type="button" to="/new">
+            NEW
+          </Button>
+          <Button type="button" onClick={logoutHandler}>
+            LOGOUT
+          </Button>
+        </Fragment>
       ) : null}
     </div>
   );

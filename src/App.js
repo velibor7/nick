@@ -10,6 +10,7 @@ import {
 import Home from "./home/pages/Home";
 import Auth from "./auth/pages/Auth";
 import NewImage from "./home/pages/NewImage";
+import MainNavigation from "./shared/components/Navigation/MainNavigation";
 
 import { useFirebaseApp, useUser } from "reactfire";
 
@@ -21,6 +22,7 @@ function App() {
   //console.log(firebase);
   let routes;
 
+  // if nik is logged in
   if (user) {
     routes = (
       <Switch>
@@ -47,7 +49,12 @@ function App() {
     );
   }
 
-  return <Router>{routes}</Router>;
+  return (
+    <Router>
+      <MainNavigation></MainNavigation>
+      {routes}
+    </Router>
+  );
 }
 
 export default App;
