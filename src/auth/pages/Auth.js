@@ -1,15 +1,15 @@
 import React, { Fragment } from "react";
+import { useHistory } from "react-router-dom";
 
 import Card from "../../shared/components/UIElements/Card";
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
 
 import { useForm } from "../../shared/hooks/form-hook";
-
 import { useFirebaseApp } from "reactfire";
 import "firebase/auth";
+
 import "./Auth.css";
-import { useHistory } from "react-router-dom";
 
 const Auth = () => {
   const [formState, inputHandler, setFormData] = useForm(
